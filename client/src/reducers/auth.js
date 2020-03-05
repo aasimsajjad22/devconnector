@@ -1,10 +1,10 @@
 import {
   REGISTER_SUCCESS,
-  //REGISTER_FAIL,
+  REGISTER_FAIL,
   USER_LOADED,
-  //AUTH_ERROR,
+  AUTH_ERROR,
   LOGIN_SUCCESS,
-  //LOGIN_FAIL,
+  LOGIN_FAIL,
   LOGOUT,
   ACCOUNT_DELETED
 } from '../actions/types';
@@ -27,36 +27,35 @@ export default function(state = initialState, action) {
         loading: false,
         user: payload
       };
-    case REGISTER_SUCCESS:
-      return {
-        ...state,
-        ...payload,
-        isAuthenticated: true,
-        loading: false
-      };
     case LOGIN_SUCCESS:
+      localStorage.setItem('token', payload.token);
       return {
         ...state,
         ...payload,
         isAuthenticated: true,
         loading: false
       };
-    case ACCOUNT_DELETED:
+    case REGISTER_SUCCESS:
+      localStorage.setItem('token', payload.token);
       return {
         ...state,
-        token: null,
-        isAuthenticated: false,
-        loading: false,
-        user: null
+        ...payload,
+        isAuthenticated: true,
+        loading: false
       };
+    case REGISTER_FAIL:
+    case AUTH_ERROR:
+    case LOGIN_FAIL:
     case LOGOUT:
+    case ACCOUNT_DELETED:
+      localStorage.removeItem('token');
       return {
         ...state,
         token: null,
         isAuthenticated: false,
-        loading: false,
-        user: null
+        loading: false
       };
+
     default:
       return state;
   }

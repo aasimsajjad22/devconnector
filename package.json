@@ -22,7 +22,9 @@
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^5.8.10",
     "normalize-url": "^5.0.0",
-    "request": "^2.88.0"
+    "redux": "^4.0.5",
+    "request": "^2.88.0",
+    "uuid": "^7.0.1"
   },
   "devDependencies": {
     "concurrently": "^5.1.0",

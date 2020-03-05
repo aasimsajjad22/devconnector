@@ -1,16 +1,6 @@
-# DevConnector 2.0
+# DevConnector
 
 > Social network for developers
-
-This is a MERN stack application from the "MERN Stack Front To Back" course on [Udemy](https://www.udemy.com/mern-stack-front-to-back/?couponCode=TRAVERSYMEDIA). It is a small social network app that includes authentication, profiles and forum posts.
-
-## Updates since course published
-
-Since the course was published, GitHub has [depreciated authentication via URL query parameters](https://developer.github.com/changes/2019-11-05-deprecated-passwords-and-authorizations-api/#authenticating-using-query-parameters)
-You can get an access token by following [these instructions](https://help.github.com/en/github/authenticating-to-github/creating-a-personal-access-token-for-the-command-line)
-For this app we don't need to add any permissions so don't select any in the _scopes_.
-**DO NOT SHARE ANY TOKENS THAT HAVE PERMISSIONS**
-This would leave your account or repositories vulnerable, depending on permissions set.
 
 It would also be worth adding your `default.json` config file to `.gitignore`
 If git has been previously tracking your `default.json` file then...
@@ -74,16 +64,3 @@ npm run build
 ```
 
 ## App Info
-
-### Author
-
-Brad Traversy
-[Traversy Media](http://www.traversymedia.com)
-
-### Version
-
-2.0.0
-
-### License
-
-This project is licensed under the MIT License
